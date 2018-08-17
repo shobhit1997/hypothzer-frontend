@@ -1,0 +1,25 @@
+<div *ngIf="data">
+
+  <h2>Edit Details</h2>
+  <div>
+    <label>Year:
+      <input [(ngModel)]="data.year" placeholder="Year"/>
+    </label>
+  </div>
+  <div>
+    <label>Population:
+      <input [(ngModel)]="data.population" placeholder="Population"/>
+    </label>
+  </div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="data.growth_rate" placeholder="Growth Rate"/>
+    </label>
+  </div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="data.growth" placeholder="Growth"/>
+    </label>
+  </div>
+  <Button (click)="save(data)">Save</Button>
+</div>

@@ -1,0 +1,30 @@
+<h2>Growth Rates</h2>
+
+
+<table>
+	<tr>
+		<th>Year</th>
+		<th>Population</th>
+		<th>Growth Rate</th>
+		<th>Growth</th>
+		<th>Operations</th>
+	</tr>
+	<tr>
+		<td><input type="number" #year placeholder="Year"/></td>
+		<td><input type="number" #population placeholder="Population"/></td>
+		<td><input type="text" #growth_rate placeholder="Growth Rate"/></td>
+		<td><input type="number" #growth placeholder="Growth"/></td>
+		<td><button  (click)="add(year.value,population.value,growth_rate.value,growth.value)"> Add
+		</button></td>
+	</tr>
+	<tr *ngFor="let data of dataSource">
+		<td>{{data.year}}</td>
+		<td>{{data.population}}</td>
+		<td>{{data.growth_rate}}</td>
+		<td>{{data.growth}}</td>
+		<td><button (click)="edit(data)">Edit</button> <button  (click)="delete(data)"> Delete</button></td>
+	</tr>
+</table>
+
+<app-population-data-detail [data]="selectedData"></app-population-data-detail>
+
