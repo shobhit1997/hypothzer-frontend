@@ -21,6 +21,9 @@ delete(data: Data): void {
   this.dataSource = this.dataSource.filter(d => d !== data);
   this.populationService.deleteData(data).subscribe();
 }
+import(): void {
+  this.populationService.importCSV().subscribe();
+}
 
 add(year: number,population: number,growth_rate : string,growth : number): void {
 

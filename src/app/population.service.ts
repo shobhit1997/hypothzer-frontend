@@ -24,6 +24,12 @@ export class PopulationService {
     		);
 	}
 
+	importCSV(): Observable<any[]> {
+  		return this.http.get<any[]>('http://localhost:8000/api/import').pipe(
+      		catchError(this.handleError('importCSV', []))
+    		);
+	}
+
 	/** DELETE: delete the hero from the server */
 	deleteData (data: Data | string): Observable<Data> {
 	  const _id = typeof data === 'string' ? data : data._id;
